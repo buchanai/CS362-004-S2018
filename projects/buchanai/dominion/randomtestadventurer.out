@@ -1,0 +1,17 @@
+--RANDOM TEST ADVENTURER CARD--
+  Tests being performd on refactored ('buggy') code from assignment 2.
+-----PREPARING TO RUN RANDOM TESTS ON ADVENTURER CARD-----
+  Randomizing the game conditions and running 5000 tests.
+  Track Deck Tests SUCCESSFUL.
+  Track Count Tests FAILED.
+	Number of test failures: 5000
+  Hand Count Tests SUCCESSFUL.
+-----TEST FAILED-----
+--COVERAGE RESULTS--
+File 'dominion.c'
+Lines executed:18.62% of 564
+Branches executed:18.71% of 417
+Taken at least once:15.59% of 417
+Calls executed:8.33% of 96
+Creating 'dominion.c.gcov'
+
