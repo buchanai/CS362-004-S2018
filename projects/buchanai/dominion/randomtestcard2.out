@@ -1,0 +1,17 @@
+--RANDOM TEST CARD 2--
+  Tests being performd on refactored ('buggy') code from assignment 2.
+-----PREPARING TO RUN RANDOM TESTS ON VILLAGE CARD-----
+  Randomizing game conditions and performing 5000 random tests.
+  Deck Size Tests were SUCCESSFUL.
+  Number of Actions Tests FAILED.
+	Number of tests failed: 5000
+  Hand Size Tests were SUCCESSFUL.
+-----TEST FAILED-----
+--COVERAGE RESULTS--
+File 'dominion.c'
+Lines executed:18.62% of 564
+Branches executed:17.27% of 417
+Taken at least once:13.67% of 417
+Calls executed:9.38% of 96
+Creating 'dominion.c.gcov'
+

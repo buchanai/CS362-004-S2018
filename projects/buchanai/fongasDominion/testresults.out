@@ -1,0 +1,314 @@
+UNIT TEST RESULTS
+--UNIT TESTS--
+Unit Test 1:
+-----UNIT TEST 1-----
+Testing the endTurn() fucntion.
+
+Calling endturn with values set to: 
+testState->hand[currentPlayer][i] = 5 
+testState->handCount[currentPlayer] = 5
+testState->whoseTurn = currentPlayer 
+testState->outpostPlayed = 1 
+testState->phase = 2
+testState->numActions = 2
+testState->numBuys = 0
+testState->playedCardCount = 2
+
+TEST SUCCESSFULLY COMPLETED!
+-----UNIT TEST 1 COMPLETE-----
+
+File 'dominion.c'
+Lines executed:19.50% of 564
+Branches executed:17.27% of 417
+Taken at least once:13.91% of 417
+Calls executed:10.53% of 95
+Creating 'dominion.c.gcov'
+
+Unit Test 2:
+
+-----UNIT TEST 2-----
+Testing updateCoins() function in dominion.c.
+   TEST AVERAGE RANGE WITH BONUSES - 6 coins + 0/1/5.
+	Test hand 1 SUCCESSFUL.
+	Test hand 2 SUCCESSFUL.
+	Test hand 3 SUCCESSFUL.
+   TESTING LOWER LIMIT - 0 coins.
+	Test hand 4 SUCCESSFUL.
+   TESTING UPPER LIMIT - 20 coins.
+	Test hand 5 SUCCESSFUL.
+-----TEST SUCCESSFULLY COMPLETED-----
+File 'dominion.c'
+Lines executed:16.13% of 564
+Branches executed:15.83% of 417
+Taken at least once:13.19% of 417
+Calls executed:7.37% of 95
+Creating 'dominion.c.gcov'
+
+Unit Test 3:
+-----UNIT TEST 3-----
+Unit test three tests the shuffle function in dominion.c
+    Test normal deck size of 13:
+	Deck count test successful - appropriate amount of cards in returned deck.
+	Compare Decks test successful - the cards are not in the same positions.
+    Test 1 success.
+    Test low deck size of 5:
+	Deck count test successful - appropriate amount of cards in returned deck.
+	Compare Decks test successful - the cards are not in the same positions.
+    Test 2 success.
+    Test moderately high deck size of 50:
+	Deck count test successful - appropriate amount of cards in returned deck.
+	Compare Decks test successful - the cards are not in the same positions.
+    Test 3 success.
+    Test high deck size of 300:
+	Deck count test successful - appropriate amount of cards in returned deck.
+	Compare Decks test successful - the cards are not in the same positions.
+    Test 4 success.
+    Boundary test of deck size - 500:
+	Deck count test successful - appropriate amount of cards in returned deck.
+	Compare Decks test successful - the cards are not in the same positions.
+    Test 5 success.
+-----TEST SUCCESSFULLY COMPLETED-----
+File 'dominion.c'
+Lines executed:15.60% of 564
+Branches executed:14.87% of 417
+Taken at least once:12.23% of 417
+Calls executed:7.37% of 95
+Creating 'dominion.c.gcov'
+
+Unit Test 4:
+-----UNIT TEST 4-----
+    Testing the discardCard() function.
+    Test 1 - check that hand count was lowered to 5.
+	--Pre game state test conditions--
+	Current Player Hand Count: 5
+	--Post CardEffect--
+	Expected 4 - received 4
+	One card remvoed from hand succesffully.
+	Hand Count Test PASS.
+    Test 2 - check that played cards count was incremented appropriately.
+	--Pre CardEffect Condition--
+	Current Player's number of played cards prior to discardCard function call: 0
+	--Post CardEffect--
+	Current Player's post condition number of played cards: 1
+	Number of played cards incremented correctly. Test PASS.
+    Test 3 - check that played card was removed from hand.
+	--Pre CardEffect Condition--
+	Current Player's card prior to discardCard function call: 7
+	--Post CardEffect--
+	Current Player's post condition card: -1
+	Card was properly removed from hand. Test PASS.
+    Test 4 - check that trash flag is set and card card count does not increment.
+	--Pre game state test conditions--
+	Current Player Hand Count: 4
+	--Post CardEffect--
+	Expected 1 - received 1
+	Trash Flag set test was succesfful. Test Pass
+    Test 5 - check the other Player's state for no change from card function call.
+	--Pre card effect test conditions--
+	Other Player Hand Count: 0
+	Other Player Deck Count: 10
+   Other player state test PASS.
+--UNIT TEST 4 SUCCESSFULLY PASSED--
+File 'dominion.c'
+Lines executed:17.38% of 564
+Branches executed:16.31% of 417
+Taken at least once:12.95% of 417
+Calls executed:7.37% of 95
+Creating 'dominion.c.gcov'
+
+--CARD TESTS--
+-----FIRST CARD TEST-----
+    Testing adventurer card:
+    Setting a test hand for current player.
+    Test 1 - check that two cards were added to hand count.
+	--Pre game state test conditions--
+	Current Player Hand Count: 5
+	--Post CardEffect--
+	Hand Count Test 1 Failed - total not expected result.
+	Expected 6 - received 7
+    Test 2 - check that two cards were treasure cards.
+	--Pre game state test conditions--
+	Current Player Hand Count: 5
+	Current Plyaer Hand: 
+	7, 
+	14, 
+	4, 
+	10, 
+	17
+	--Post CardEffect--
+	Current Plyaer Hand: 
+	7, 
+	14, 
+	4, 
+	10, 
+	17, 
+	4, 
+	4
+	Treasure Card was added.
+	Treasure Card was added.
+	Teasure card add test successful.
+    Test 3 - check the other Player's state for no change from card function call.
+	--Pre card effect test conditions--
+	Other Player Hand Count: 0
+	Other Player Deck Count: 10
+Other player state test PASS.
+--CARD 1 TEST FAILED!--
+File 'dominion.c'
+Lines executed:22.87% of 564
+Branches executed:24.22% of 417
+Taken at least once:16.31% of 417
+Calls executed:12.63% of 95
+Creating 'dominion.c.gcov'
+
+-----SECOND CARD TEST-----
+    Testing smithy card:
+    Setting a test hand for current player.
+    Test 1 - check total card count - should be 7(three added, one removed).
+	--Pre game state test conditions--
+	Current Player Hand Count: 5
+	--Post CardEffect--
+	Hand Count Test 1 FAIL.
+	Expected 7 - received 8
+    Test 2 - check that the smithy card was removed.
+	--Post CardEffect--
+	Current Player's Hand: 
+	4, 
+	14, 
+	4, 
+	10, 
+	17, 
+	1, 
+	4
+	Smithy Card remove test PASS.
+    Test 3 - check the other Player's state for no change from card function call.
+	--Pre card effect test conditions--
+	Other Player Hand Count: 0
+	Other Player Deck Count: 10
+   Other player state test PASS.
+--CARD 2 TEST FAILED!--
+File 'dominion.c'
+Lines executed:20.57% of 564
+Branches executed:22.30% of 417
+Taken at least once:13.67% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+
+-----THIRD CARD TEST-----
+    Testing village card:
+    Setting a test hand for current player.
+    Test 1 - check total card count - should be 5.
+	--Pre game state test conditions--
+	Current Player Hand Count: 5
+	--Post CardEffect--
+	Expected 5 - received 5
+	One card remvoed (village), and one card added (from deck) succesffully.	Hand Count Test 1 PASS.
+    Test 2 - check that two actions were added to the current player's turn.
+	--Pre CardEffect Condition--
+	Current Player's number of actions prior to card effect function call: 1
+	--Post CardEffect--
+	Current Player's post condition number of actions: 1
+	Number of actions added test FAIL.
+    Test 3 - check the other Player's state for no change from card function call.
+	--Pre card effect test conditions--
+	Other Player Hand Count: 0
+	Other Player Deck Count: 10
+   Other player state test PASS.
+--CARD 3 TEST FAILED!--
+File 'dominion.c'
+Lines executed:20.39% of 564
+Branches executed:21.82% of 417
+Taken at least once:13.19% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+
+-----FOURTH CARD TEST-----
+    Testing council_room card:
+    Setting a test hand for current player.
+    Test 1 - check total card count - should be 8.
+	--Pre game state test conditions--
+	Current Player Hand Count: 5
+	--Post CardEffect--
+	Expected 8 - received 8
+	One card remvoed (council room), and four cards added (from deck) succesffully.
+	Hand Count Test 1 PASS.
+    Test 2 - check that one buy was added to the current player's turn.
+	--Pre CardEffect Condition--
+	Current Player's number of buys prior to card effect function call: 1
+	--Post CardEffect--
+	Current Player's post condition number of buys: 1
+	Number of buys added test FAIL.
+    Test 3 - check the other Player's state for no change from card function call.
+	--Pre card effect test conditions--
+	Other Player Hand Count: 0
+	Other Player Deck Count: 10
+	--Post card effect test conditions--
+	Card effect should be +1 card in hand and -1 deck count.
+	Other Player Hand Count: 1
+	Other Player Deck Count: 9
+   Other player state test PASS.
+--CARD 4 TEST FAILED!--
+File 'dominion.c'
+Lines executed:21.10% of 564
+Branches executed:23.26% of 417
+Taken at least once:14.63% of 417
+Calls executed:12.63% of 95
+Creating 'dominion.c.gcov'
+
+RANDOM TEST RESULTS
+-----PREPARING TO RUN RANDOM TESTS ON SMITHY CARD-----
+  Assigning random values and performing 5000 iterations.
+Hand Count Test FAILURE.
+  Number of tests failed: 5000
+Deck Count Test FAILURE.
+  Number of tests failed: 5000
+-----TEST FAILED-----
+File 'dominion.c'
+Lines executed:20.92% of 564
+Branches executed:23.26% of 417
+Taken at least once:14.63% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+-----PREPARING TO RUN RANDOM TESTS ON VILLAGE CARD-----
+  Randomizing game conditions and performing 5000 random tests.
+  Deck Size Tests FAILED.
+	Number of tests failed: 2693
+  Number of Actions Tests FAILED.
+	Number of tests failed: 5000
+  Hand Size Tests were SUCCESSFUL.
+-----TEST FAILED-----
+File 'dominion.c'
+Lines executed:20.74% of 564
+Branches executed:22.78% of 417
+Taken at least once:14.15% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+-----PREPARING TO RUN RANDOM TESTS ON ADVENTURER CARD-----
+  Randomizing the game conditions and running 5000 tests.
+  Running tests directly on the refactored adventurerCard function.
+
+--Direct Adventurer Card Function Results--
+  Track Deck Tests SUCCESSFUL.
+  Track Count Tests FAILED.
+	Number of test failures: 5000
+  Hand Count Tests SUCCESSFUL.
+Running tests on the refactored adventurerCard function by calling through the cardEffect function.
+
+--Card Effect Call Results--
+  Track Deck Tests FAILED.
+	Number of test failures: 2600
+  Track Count Tests FAILED.
+	Number of test failures: 10000
+  Hand Count Tests FAILED.
+	Number of test failures: 3738
+-----TEST FAILED-----
+File 'dominion.c'
+Lines executed:22.34% of 564
+Branches executed:25.18% of 417
+Taken at least once:17.27% of 417
+Calls executed:12.63% of 95
+Creating 'dominion.c.gcov'
+
