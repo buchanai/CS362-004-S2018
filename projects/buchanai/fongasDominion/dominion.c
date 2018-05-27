@@ -28,6 +28,10 @@ void adventurerCard(int drawntreasure, struct gameState *state, int currentPlaye
 }
 
 void council_roomCard(int currentPlayer, struct gameState *state, int handPos){
+	//BUG FIX HERE - bug fixed by Ian Buchanan
+	//Fix includes incrementing the number of buys for the current player by one.
+	state->numBuys = state->numBuys + 1;
+
 	//+4 Cards
 	
 	int i = 0; 
@@ -44,7 +48,7 @@ void council_roomCard(int currentPlayer, struct gameState *state, int handPos){
 	      drawCard(i, state);
 	    }
 	}
-			
+
       //put played card in played card pile
       discardCard(handPos, currentPlayer, state, 0);
 }
